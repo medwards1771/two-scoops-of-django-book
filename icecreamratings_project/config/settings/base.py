@@ -1,8 +1,20 @@
 """
 Base settings to build other settings files upon.
 """
+from os.path import abspath, dirname, join
 
 import environ
+
+
+def root(*dirs):
+    base_dir = join(dirname(__file__), '..', '..')
+    return abspath(join(base_dir, *dirs))
+
+
+BASE_DIR = root()
+MEDIA_ROOT = root('media')
+STATIC_ROOT = root('static_root')
+STATIC_FILES_DIRS = [root('static')]
 
 ROOT_DIR = (
     environ.Path(__file__) - 3
