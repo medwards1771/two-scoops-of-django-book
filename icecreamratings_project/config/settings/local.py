@@ -55,4 +55,10 @@ INTERNAL_IPS = ["127.0.0.1", "10.0.2.2"]
 INSTALLED_APPS += ["django_extensions"]  # noqa F405
 
 # Your stuff...
-# ------------------------------------------------------------------------------
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'twoscoops',
+        'HOST': 'localhost',
+    }
+}
